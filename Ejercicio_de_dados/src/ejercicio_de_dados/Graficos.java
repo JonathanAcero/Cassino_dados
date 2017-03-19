@@ -12,8 +12,10 @@ package ejercicio_de_dados;
 public class Graficos extends javax.swing.JFrame {
   Dados dado1grafico = new Dados();
   Dados dado2grafico = new Dados();
+  Calcular calculadora = new Calcular();
   int apuesta;
   int saldo = 10000000;
+  int resultado;
   
  
    
@@ -162,9 +164,11 @@ public class Graficos extends javax.swing.JFrame {
   dado2.setText(Integer.toString(dado2grafico.lanzar()));
   this.lanzar.setEnabled(false);
   this.jugar.setEnabled(true);
-   int num1 = Integer.parseInt(dado1.getText());
-       int num2 = Integer.parseInt(dado2.getText());
-       mensaje.setText(String.valueOf(num2+num1));
+  int num1 = Integer.parseInt(dado1.getText());
+  int num2 = Integer.parseInt(dado2.getText());
+  resultado  = num1+num2;
+  
+  
   
   
   // TODO add your handling code here:
@@ -183,10 +187,9 @@ public class Graficos extends javax.swing.JFrame {
       else{
        this.lanzar.setEnabled(true);
        this.jugar.setEnabled(false);
+       apuesta= Integer.parseInt(apu1.getText());
        apu1.setText(null);
-       mensaje.setText(null);
       } 
- 
 // TODO add your handling code here:}
 
     }//GEN-LAST:event_jugarMouseClicked
@@ -209,6 +212,7 @@ public class Graficos extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
        
     
         java.awt.EventQueue.invokeLater(new Runnable() {
