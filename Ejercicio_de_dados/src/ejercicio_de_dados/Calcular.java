@@ -11,6 +11,15 @@ package ejercicio_de_dados;
  */
 public class Calcular extends Graficos {
     
+    void casilla_vacia(){
     
+    
+    
+    }
+    
+    void calcular(){
+        
+    
+    }
     
 }
