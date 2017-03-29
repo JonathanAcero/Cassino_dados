@@ -17,12 +17,13 @@ public class Graficos extends javax.swing.JFrame {
   int saldo = 10000000;
   int resultado;
   
+  
  
    
 
     public Graficos() {
         initComponents();
-        this.lanzar.setEnabled(false);
+        this.lanzar1.setEnabled(false);
         this.saldo1.setText(Integer.toString(saldo));
     }
 
@@ -38,12 +39,12 @@ public class Graficos extends javax.swing.JFrame {
 
         dado1 = new javax.swing.JTextField();
         dado2 = new javax.swing.JTextField();
-        lanzar = new javax.swing.JButton();
+        jugar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         apu1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         saldo1 = new javax.swing.JTextField();
-        jugar = new javax.swing.JButton();
+        lanzar1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         mensaje = new javax.swing.JTextField();
 
@@ -53,16 +54,16 @@ public class Graficos extends javax.swing.JFrame {
 
         dado2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
 
-        lanzar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lanzar.setText("Lanzar");
-        lanzar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jugar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jugar.setText("Iniciar Juego");
+        jugar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lanzarMouseClicked(evt);
+                jugarMouseClicked(evt);
             }
         });
-        lanzar.addActionListener(new java.awt.event.ActionListener() {
+        jugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lanzarActionPerformed(evt);
+                jugarActionPerformed(evt);
             }
         });
 
@@ -78,16 +79,16 @@ public class Graficos extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel2.setText("Saldo");
 
-        jugar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jugar.setText("Guardar apuesta");
-        jugar.addMouseListener(new java.awt.event.MouseAdapter() {
+        lanzar1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lanzar1.setText("Lanzar Dados");
+        lanzar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jugarMouseClicked(evt);
+                lanzar1MouseClicked(evt);
             }
         });
-        jugar.addActionListener(new java.awt.event.ActionListener() {
+        lanzar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jugarActionPerformed(evt);
+                lanzar1ActionPerformed(evt);
             }
         });
 
@@ -112,18 +113,17 @@ public class Graficos extends javax.swing.JFrame {
                     .addComponent(apu1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(dado1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lanzar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(dado2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(dado1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lanzar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(31, 31, 31)
+                        .addComponent(dado2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addGap(43, 43, 43))
@@ -134,14 +134,19 @@ public class Graficos extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dado2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dado1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lanzar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jugar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dado1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dado2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lanzar1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)))
+                .addComponent(jugar)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(apu1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -151,7 +156,7 @@ public class Graficos extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addComponent(mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -159,40 +164,49 @@ public class Graficos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lanzarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lanzarMouseClicked
-  dado1.setText(Integer.toString(dado1grafico.lanzar()));   
-  dado2.setText(Integer.toString(dado2grafico.lanzar()));
-  this.lanzar.setEnabled(false);
-  this.jugar.setEnabled(true);
-  int num1 = Integer.parseInt(dado1.getText());
-  int num2 = Integer.parseInt(dado2.getText());
-  resultado  = num1+num2;
-  
-  
-  
-  
-  // TODO add your handling code here:
-    }//GEN-LAST:event_lanzarMouseClicked
-
-    private void jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugarActionPerformed
-
     private void jugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugarMouseClicked
-       dado1.setText(null);
+      dado1.setText(null);
        dado2.setText(null);
       if (apu1.getText().equals("")){
       mensaje.setText("Por favor ingrese una apuesta ");
        }
       else{
-       this.lanzar.setEnabled(true);
        this.jugar.setEnabled(false);
-       apuesta= Integer.parseInt(apu1.getText());
+       this.lanzar1.setEnabled(true);
+       calculadora.apuesta= Integer.parseInt(apu1.getText());
        apu1.setText(null);
+       mensaje.setText(null);
       } 
+        
+       
+ 
+  
+  
+  
+  // TODO add your handling code here:
+    }//GEN-LAST:event_jugarMouseClicked
+
+    private void lanzar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanzar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lanzar1ActionPerformed
+
+    private void lanzar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lanzar1MouseClicked
+    dado1.setText(Integer.toString(dado1grafico.lanzar()));   
+  dado2.setText(Integer.toString(dado2grafico.lanzar()));
+  this.jugar.setEnabled(true);
+  this.lanzar1.setEnabled(false);
+  int num1 = Integer.parseInt(dado1.getText());
+  int num2 = Integer.parseInt(dado2.getText());
+  calculadora.resultado = num1+num2;
+  this.saldo1.setText(String.valueOf(calculadora.calcular()));
+  this.mensaje.setText(calculadora.mensaje());
+  
+ 
+ 
+ 
 // TODO add your handling code here:}
 
-    }//GEN-LAST:event_jugarMouseClicked
+    }//GEN-LAST:event_lanzar1MouseClicked
  
     private void apu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apu1ActionPerformed
         
@@ -203,16 +217,16 @@ public class Graficos extends javax.swing.JFrame {
  System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void lanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanzarActionPerformed
+    private void jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarActionPerformed
     
      // TODO add your handling code here:
-    }//GEN-LAST:event_lanzarActionPerformed
+    }//GEN-LAST:event_jugarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+       
        
     
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -230,8 +244,16 @@ public class Graficos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jugar;
-    private javax.swing.JButton lanzar;
+    private javax.swing.JButton lanzar1;
     private javax.swing.JTextField mensaje;
     private javax.swing.JTextField saldo1;
     // End of variables declaration//GEN-END:variables
 }
+
+
+
+
+
+
+
+
